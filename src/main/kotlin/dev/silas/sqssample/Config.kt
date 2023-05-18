@@ -40,5 +40,4 @@ class Config {
                 interceptors.forEach(this::messageInterceptor)
             }
             .build()
-
 }

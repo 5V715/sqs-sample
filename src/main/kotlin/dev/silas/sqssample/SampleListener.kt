@@ -14,6 +14,6 @@ class SampleListener {
     @SqsListener("\${app.queue}")
     fun handleMessage(content: Content, ack: Acknowledgement) {
         logger.info { "got message: $content" }
-        ack.acknowledgeAsync().get(5,TimeUnit.SECONDS)
+        ack.acknowledgeAsync().get(5, TimeUnit.SECONDS)
     }
 }
