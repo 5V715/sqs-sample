@@ -1,0 +1,5 @@
+app:
+  queue: https://sqs.eu-central-1.amazonaws.com/654634568463/sample-queue
+logging:
+  level:
+    io.awspring.cloud.sqs: DEBUG
