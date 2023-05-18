@@ -1,5 +1,16 @@
 app:
   queue: https://sqs.eu-central-1.amazonaws.com/654634568463/sample-queue
-logging:
-  level:
-    io.awspring.cloud.sqs: DEBUG
+spring:
+  application:
+    name: sqs-sample
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus

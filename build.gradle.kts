@@ -23,12 +23,27 @@ dependencyManagement {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+    implementation("com.github.loki4j:loki-logback-appender:1.4.0")
     implementation(platform("io.awspring.cloud:spring-cloud-aws-dependencies:3.0.1"))
     implementation("io.awspring.cloud:spring-cloud-aws-starter-sqs")
+
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
+
+    implementation("io.micrometer:micrometer-tracing")
+    implementation("io.micrometer:micrometer-observation")
+    implementation("io.micrometer:micrometer-tracing-bridge-brave")
+    implementation("io.micrometer:micrometer-registry-prometheus")
+
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.+")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.1")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
