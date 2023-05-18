@@ -20,7 +20,10 @@ class SampleListener(
         Observation.start("handling message", registry)
             .observe {
                 logger.info { "got message: $content" }
-                ack.acknowledgeAsync().get(5, TimeUnit.SECONDS)
+                Observation.start("acknowledge message", registry)
+                    .observe {
+                        ack.acknowledgeAsync().get(5, TimeUnit.SECONDS)
+                    }
             }
     }
 }
